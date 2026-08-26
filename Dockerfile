@@ -455,4 +455,4 @@ RUN mkdir -p /opt/data
 COPY docker/fix-default-model.sh /etc/cont-init.d/03-fix-default-model
 RUN chmod +x /etc/cont-init.d/03-fix-default-model
 ENTRYPOINT [ "/opt/hermes/docker/entrypoint-dispatch.sh" ]
-CMD [ "-m", "google/gemini-2.5-flash", "gateway", "run" ]
+CMD [ "gateway", "run" ]
