@@ -4,7 +4,7 @@
 
 if [ -f /opt/data/config.yaml ]; then
   sed -i 's|anthropic/claude-opus-4.6|anthropic/claude-sonnet-5|g' /opt/data/config.yaml
-  sed -i 's|^\( *provider: *\)auto *$|\1anthropic|' /opt/data/config.yaml
+  sed -i 's|^\( *provider: *\)"\?auto"\? *$|\1"anthropic"|' /opt/data/config.yaml
 fi
 
 # Restore the Anthropic OAuth credential from the environment.
