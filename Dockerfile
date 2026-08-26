@@ -452,5 +452,7 @@ RUN mkdir -p /opt/data
 # supervised PID-1 path and the non-PID-1 fallback path. Without the
 # wrapper-as-ENTRYPOINT, leading-dash args like `--version` would be
 # intercepted by /init's POSIX shell.
+COPY docker/fix-default-model.sh /etc/cont-init.d/03-fix-default-model
+RUN chmod +x /etc/cont-init.d/03-fix-default-model
 ENTRYPOINT [ "/opt/hermes/docker/entrypoint-dispatch.sh" ]
 CMD [ "-m", "google/gemini-2.5-flash", "gateway", "run" ]
