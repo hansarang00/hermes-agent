@@ -453,4 +453,4 @@ RUN mkdir -p /opt/data
 # wrapper-as-ENTRYPOINT, leading-dash args like `--version` would be
 # intercepted by /init's POSIX shell.
 ENTRYPOINT [ "/opt/hermes/docker/entrypoint-dispatch.sh" ]
-CMD [ "gateway", "run", "--model", "google/gemini-2.5-flash" ]
+CMD [ "gateway", "run", "-m", "google/gemini-2.5-flash" ]
